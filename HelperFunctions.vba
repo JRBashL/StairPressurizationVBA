@@ -46,7 +46,11 @@ Public Sub CreateDoorsDictionary(ByRef a_doorsDict As Scripting.Dictionary)
             Set newDoor = New DoorClass
             
             'Read the data off the cells
-            doorName = wsDoors.Range(checkCell).Offset(1, -3).Value
+            If wsDoors.Range(checkCell).Offset(1, -3).Value = "" Then
+                doorName = "No Name"
+            Else
+                doorName = wsDoors.Range(checkCell).Offset(1, -3).Value
+            End If
             doorType = wsDoors.Range(checkCell).Offset(2, -3).Value
             doorWidth = wsDoors.Range(checkCell).Offset(4, -3).Value
             doorHeight = wsDoors.Range(checkCell).Offset(5, -3).Value
@@ -59,9 +63,11 @@ Public Sub CreateDoorsDictionary(ByRef a_doorsDict As Scripting.Dictionary)
             newDoor.Constructor wsDoors.Range(checkCell).Value, doorName, doorType, doorWidth, doorHeight, doorHandleDistance, _
                                 doorLeakageGap, doorLeakageType, doorLeakageArea
             
-            ' Add the new door instance to the dictionary
-            ' The key is the door's name, and the value is the instance itself
-            ' This is just an example, a real name would be read from a cell.
+            ' Add the new door instance to the dictionary with duplicate handling
+            If a_doorsDict.Exists(newDoor.P_Name) Then
+                newDoor.P_Name = newDoor.P_Name + "1"
+            End If
+
             a_doorsDict.Add newDoor.P_Name, newDoor
             
             ' Clean up the object variable for the next loop iteration

@@ -16,7 +16,7 @@ Private v_leakageType As String
 Private v_leakageArea As Long
 
 ' --- Constructor ---
-Public Sub Constructor(ByVal a_useDoor As Boolean, ByVal a_name As String, ByVal a_doorType As String _
+Public Sub Constructor(ByVal a_useDoor As Boolean, ByVal a_name As String, ByVal a_doorType As String, _
                         ByVal a_width As Long, ByVal a_height As Long, ByVal a_handleDistance As Long, _              
                         ByVal a_leakageGap As Long, ByVal a_leakageType As String, ByVal a_leakageArea As Long)
     ' Assign the input parameters to the public properties
@@ -70,7 +70,7 @@ Public Property Let P_Width(ByVal a_value As Long)
 End Property
 
 Public Property Get P_Width() As Long
-    P_width = v_width
+    P_Width = v_width
 End Property
 
 ' Property for v_height (Long)
@@ -80,7 +80,7 @@ Public Property Let P_Height(ByVal a_value As Long)
 End Property
 
 Public Property Get P_Height() As Long
-    P_height = v_height
+    P_Height = v_height
 End Property
 
 ' Property for v_singleDoorArea (Long). Private Set

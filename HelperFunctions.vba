@@ -91,16 +91,16 @@ Public Sub DoorDebugPrinter(ByVal a_doorToPrint As DoorClass)
 
     Set wsDoors = Worksheets("Doors")
 
-    wsDoors.Range("AE:6").Value = a_doorToPrint.P_UseDoor
-    wsDoors.Range("AE:7").Value = a_doorToPrint.P_Name
-    wsDoors.Range("AE:8").Value = a_doorToPrint.P_DoorType
-    wsDoors.Range("AE:9").Value = a_doorToPrint.P_Width
-    wsDoors.Range("AE:10").Value = a_doorToPrint.P_Height
-    wsDoors.Range("AE:11").Value = a_doorToPrint.P_SingleDoorArea
-    wsDoors.Range("AE:12").Value = a_doorToPrint.P_TotalArea
-    wsDoors.Range("AE:13").Value = a_doorToPrint.P_HandleDistance
-    wsDoors.Range("AE:14").Value = a_doorToPrint.P_LeakageGap
-    wsDoors.Range("AE:15").Value = a_doorToPrint.P_LeakageType
-    wsDoors.Range("AE:16").Value = a_doorToPrint.P_LeakageArea
+    wsDoors.Range("AE6").Value = a_doorToPrint.P_UseDoor
+    wsDoors.Range("AE7").Value = a_doorToPrint.P_Name
+    wsDoors.Range("AE8").Value = a_doorToPrint.P_DoorType
+    wsDoors.Range("AE9").Value = a_doorToPrint.P_Width
+    wsDoors.Range("AE10").Value = a_doorToPrint.P_Height
+    wsDoors.Range("AE11").Value = a_doorToPrint.P_SingleDoorArea
+    wsDoors.Range("AE12").Value = a_doorToPrint.P_TotalArea
+    wsDoors.Range("AE13").Value = a_doorToPrint.P_HandleDistance
+    wsDoors.Range("AE14").Value = a_doorToPrint.P_LeakageGap
+    wsDoors.Range("AE15").Value = a_doorToPrint.P_LeakageType
+    wsDoors.Range("AE16").Value = a_doorToPrint.P_LeakageArea
 
 End Sub

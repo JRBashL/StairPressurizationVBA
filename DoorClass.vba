@@ -8,7 +8,8 @@ Private v_name As String
 Private v_doorType As String
 Private v_width As Long
 Private v_height As Long
-Private v_area As Long
+Private v_singleDoorArea As Long
+Private v_totalArea As Long
 Private v_handleDistance As Long
 Private v_leakageGap As Long
 Private v_leakageType As String
@@ -49,7 +50,17 @@ Public Property Let P_Name(ByVal a_value As String)
 End Property
 
 Public Property Get P_Name() As String
-    P_name = v_name
+    P_Name = v_name
+End Property
+
+' Property for v_doorType (String)
+Public Property Let P_DoorType (ByVal a_value As String) 
+    v_doorType = a_value
+    CalculateArea
+End Property
+
+Public Property Get P_DoorType() As String
+    P_DoorType = v_doorType
 End Property
 
 ' Property for v_width (Long)
@@ -72,9 +83,14 @@ Public Property Get P_Height() As Long
     P_height = v_height
 End Property
 
-' Property for v_area (Long) is readonly
-Public Property Get P_Area() As Long
-    P_area = v_area
+' Property for v_singleDoorArea (Long). Private Set
+Public Property Get P_SingleDoorArea() As Long
+    P_SingleDoorArea = v_singleDoorArea
+End Property
+
+' Property for v_totalArea (Long). Private Set
+Public Property Get P_TotalArea() As Long
+    P_TotalArea = v_totalArea
 End Property
 
 ' Property for v_handleDistance (Long)
@@ -117,14 +133,17 @@ End Property
 
 ' Private method to encapsulate the area calculation logic
 Private Sub CalculateArea()
+    v_singleDoorArea = v_width * v_height
+
     Select Case v_doorType
         Case "Single"
-            v_area = v_width * v_height
+            v_totalArea = v_singleDoorArea
         Case "Double"
-            v_area = 2 * v_width * v_height
+            v_totalArea = 2 * v_singleDoorArea
         Case Else
             ' Handle other cases or set to 0 if the doorType is unknown
-            v_area = 0
+            v_singleDoorArea = 0
+            v_totalArea = 0
     End Select
 End Sub
 

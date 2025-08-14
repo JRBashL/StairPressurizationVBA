@@ -126,7 +126,7 @@ Public Property Let P_LeakageArea(ByVal a_value As Single)
 End Property
 
 Public Property Get P_LeakageArea() As Single
-    P_leakageArea = v_leakageArea
+    P_LeakageArea = v_leakageArea
 End Property
 
 ' --- Private Helper Methods ---

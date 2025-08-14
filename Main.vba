@@ -116,8 +116,8 @@ Public Sub PopulateLeakageCalcDoors()
 
     Set ws = Worksheets("Leakage Calc")
 
-    headCells = Array("A10", "A23", "A35", "A48", "A61", "A74", "A86", "A99", _
-                       "A112", "A125", "A137", "A150", "A176", "A188", "A201")
+    headCells = Array("A10", "A23", "A36", "A49", "A62", "A75", "A88", "A101", _
+                       "A114", "A127", "A140", "A153", "A166", "A179", "A192", "A205")
 
     ' Loop through each Stairwell builder block
     For i = LBound(headCells) To UBound(headCells)
